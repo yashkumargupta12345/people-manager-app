@@ -1,59 +1,111 @@
-# PeopleManagerApp
+# People Manager App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+A simple Angular Single Page Application to manage a list of people.  
+You can list, add, edit, and delete people with fields: **name, age, gender, phone**.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
+- List all people in a table
+- Add a new person
+- Edit existing person details
+- Delete a person
+- Responsive and modern UI
+
+---
+
+## Project Structure
+
+```
+src/
+  app/
+    app.html
+    app.css
+    app.routes.ts
+    app.routes.server.ts
+    people-list.component.ts
+    person-create.component.ts
+    person-edit.component.ts
+    person-delete.component.ts
+    people.service.ts
+    person.model.ts
+  styles.css
+  main.ts
+  main.server.ts
+  server.ts
+  index.html
+angular.json
+package.json
+```
+
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+```sh
+npm install
+```
+
+### 2. Run the development server
+
+```sh
+npm start
+```
+or
+```sh
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Visit [http://localhost:4200/](http://localhost:4200/) in your browser.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Building for Production
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+```sh
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Running Unit Tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+```sh
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Deployment (SSR/Prerender)
 
-```bash
-ng e2e
-```
+- Static routes (`/`, `/create`) are prerendered.
+- Dynamic routes (`/edit/:id`, `/delete/:id`) use server-side rendering.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+If you see errors about prerendering parameterized routes, check [`src/app/app.routes.server.ts`](src/app/app.routes.server.ts) for correct `renderMode` settings.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Customization
+
+- To change fields, update [`person.model.ts`](src/app/person.model.ts) and related components.
+- To style, edit [`app.css`](src/app/app.css).
+
+---
+
+## License
+
+MIT
+
+---
+
+## Credits
+
+Built with [Angular](https://angular.dev/).
+
+
+## 🔗 Live Demo
+
+[Click here to view the live site](https://people-manager-app.vercel.app/)
