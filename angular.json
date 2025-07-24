@@ -22,7 +22,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/app.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -86,5 +87,13 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "22319a99-217c-4bce-9610-49e082ff5822"
   }
 }
+
+
+
+
+
